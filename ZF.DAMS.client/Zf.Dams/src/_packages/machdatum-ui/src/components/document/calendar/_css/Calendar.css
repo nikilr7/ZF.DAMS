@@ -1,0 +1,72 @@
+.rbc-month-view {
+  border: 0;
+  flex-basis: auto;
+  height: auto;
+}
+
+.rbc-header {
+  font-family: var(--chakra-fonts-body);
+  font-size: var(--chakra-fontSizes-xs);
+  color: var(--chakra-colors-gray-800);
+  font-weight: normal;
+  border-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.rbc-today {
+  background-color: var(--chakra-colors-white);
+}
+
+.rbc-selected {
+  background-color: var(--chakra-colors-white);
+}
+
+.rbc-off-range-bg {
+  background-color: var(--chakra-colors-gray-50);
+}
+
+.rbc-header + .rbc-header {
+  border-left: 0;
+}
+
+.rbc-month-view > .rbc-month-row {
+  border: 1px solid #e0e5e9;
+}
+
+.rbc-month-view > .rbc-month-row ~ .rbc-month-row {
+  border-top-width: 0;
+}
+
+.rbc-day-bg {
+  z-index: 3;
+}
+
+.rbc-event {
+  padding: 4px;
+  height: 26px;
+}
+
+.rbc-event.rbc-selected {
+  background-color: var(--chakra-colors-white);
+}
+
+.event-pill {
+  background-color: var(--chakra-colors-white);
+  color: var(--chakra-colors-black);
+  border: 1px solid transparent;
+  border-radius: 2px;
+  width: calc(100% - 8px);
+  margin-left: 4px;
+}
+
+.event-pill.future {
+  cursor: default;
+}
+
+.rbc-date-cell {
+  font-size: 14px;
+  font-weight: medium;
+  padding: 0 2px 0 4px;
+}

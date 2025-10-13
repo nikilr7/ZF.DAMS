@@ -1,0 +1,11 @@
+:where(img, video) {
+  max-width: 100% !important;
+  height: 100dvh !important;
+}
+
+@media (max-width: 768px) {
+  :where(img, video) {
+    min-width: 100% !important;
+    height: auto !important;
+  }
+}
