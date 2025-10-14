@@ -1,9 +1,9 @@
 package com.Zf.Dams.Zf.Dams.Repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 import com.Zf.Dams.Zf.Dams.Entities.Cell;
 
-public interface CellRepository extends JpaRepository<Cell, Integer> {
+public interface CellRepository extends CrudRepository<Cell, Integer> {
 
 }

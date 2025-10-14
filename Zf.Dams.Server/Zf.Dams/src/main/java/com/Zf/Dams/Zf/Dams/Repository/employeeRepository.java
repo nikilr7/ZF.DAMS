@@ -1,9 +1,9 @@
 package com.Zf.Dams.Zf.Dams.Repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 import com.Zf.Dams.Zf.Dams.Entities.Employee;
 
-public interface employeeRepository extends JpaRepository<Employee, Integer> {
+public interface employeeRepository extends CrudRepository<Employee, Integer> {
 
 }
