@@ -6,6 +6,8 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.Zf.Dams.Zf.Dams.Repository.ActivityRepository;
+
 import jakarta.persistence.MappedSuperclass;
 
 public class SuperDao<R extends CrudRepository<T, ID>, T, ID>

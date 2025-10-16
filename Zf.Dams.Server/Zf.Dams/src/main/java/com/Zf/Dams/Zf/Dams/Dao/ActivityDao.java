@@ -1,18 +1,20 @@
 package com.Zf.Dams.Zf.Dams.Dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import com.Zf.Dams.Zf.Dams.Dao.SuperDao.SuperDao;
+import com.Zf.Dams.Zf.Dams.Entities.Activity;
 import com.Zf.Dams.Zf.Dams.Repository.ActivityRepository;
 
-public class ActivityDao extends SuperDao<CrudRepository<ActivityRepository,Integer>, ActivityRepository, Integer>
-{
-	@Autowired
-	private ActivityRepository repos;
-	
-	public ActivityDao(CrudRepository<ActivityRepository, Integer> repos) {
-		super(repos);
-		
-	}
+@Repository
+public class ActivityDao extends SuperDao<ActivityRepository, Activity, Integer> {
+
+    private final ActivityRepository repos;
+
+    @Autowired
+    public ActivityDao(ActivityRepository repos) {
+        super(repos);
+        this.repos = repos;
+    }
 }
