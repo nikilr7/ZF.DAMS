@@ -8,13 +8,7 @@ import com.Zf.Dams.Zf.Dams.Entities.Activity;
 import com.Zf.Dams.Zf.Dams.Repository.ActivityRepository;
 
 @Repository
-public class ActivityDao extends SuperDao<ActivityRepository, Activity, Integer> {
-
-    private final ActivityRepository repos;
-
-    @Autowired
-    public ActivityDao(ActivityRepository repos) {
-        super(repos);
-        this.repos = repos;
-    }
+public class ActivityDao extends SuperDao<ActivityRepository, Activity, Integer> 
+{
+	
 }

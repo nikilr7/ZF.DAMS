@@ -8,11 +8,5 @@ import com.Zf.Dams.Zf.Dams.Repository.AreaRepository;
 
 public class AreaDao extends SuperDao<AreaRepository, Area, Integer>
 {
-	private final AreaRepository repos;
-
-	public AreaDao(AreaRepository repos) {
-		super(repos);
-		this.repos = repos;
-	}
 	
 }

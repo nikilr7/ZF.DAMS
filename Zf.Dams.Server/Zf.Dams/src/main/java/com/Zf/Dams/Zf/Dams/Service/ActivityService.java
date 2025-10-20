@@ -3,10 +3,14 @@ package com.Zf.Dams.Zf.Dams.Service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.Zf.Dams.Zf.Dams.Dao.ActivityDao;
 import com.Zf.Dams.Zf.Dams.Entities.Activity;
+import com.Zf.Dams.Zf.Dams.Helpers.Response;
+import com.Zf.Dams.Zf.Dams.Helpers.ResponseStructure;
 
 
 @Service
@@ -15,23 +19,68 @@ public class ActivityService
 	@Autowired
 	private ActivityDao dao;
 	
-	public Activity saveActivity(Activity data)
+	@Autowired
+	Response<Activity> response;
+	
+	public ResponseEntity<ResponseStructure<Activity>> savedata(Activity data)
 	{
-		return dao.saveData(data);
+		Activity save= dao.saveData(data);
+		ResponseStructure<Activity> resp=response.ResponseStructure(save, "Successful", HttpStatus.CREATED.value());
+		
+		return new ResponseEntity<ResponseStructure<Activity>>(resp,HttpStatus.CREATED);
 	}
 	
-	public Iterable<Activity> findAllActivity()
+	public ResponseEntity<ResponseStructure<Iterable<Activity>>> findAllData()
 	{
-		return dao.findAllData();
+		Iterable<Activity> list=dao.findAllData();
+		ResponseStructure<Iterable<Activity>> resp=response.ResponseStructureList(list, "Successful", HttpStatus.CREATED.value());
+		
+		return new ResponseEntity<ResponseStructure<Iterable<Activity>>>(resp,HttpStatus.CREATED);
+		
 	}
 	
-	public Optional<Activity> findActivityById(Integer id)
+	public ResponseEntity<ResponseStructure<Activity>> findById(Integer id)
 	{
-		return dao.findById(id);
+		Optional<Activity> opt=dao.findById(id);
+		
+		if(opt.isPresent())
+		{
+			ResponseStructure<Activity> resp=response.ResponseStructure(opt.get(), "Found", HttpStatus.FOUND.value());
+			
+			return new ResponseEntity<ResponseStructure<Activity>>(resp,HttpStatus.FOUND);
+		}
+		
+		return null;
 	}
 	
-	public String DeletingActivity(Activity data)
+	public ResponseEntity<ResponseStructure<String>> deleteData(Integer id)
 	{
-		return dao.DeleteData(data);
+		Optional<Activity> opt=dao.findById(id);
+		
+		if(opt.isPresent())
+		{
+			String delete=dao.DeleteData(opt.get());
+			
+			ResponseStructure<String> resp=response.ResponseStructureDelete(delete, "Deleted", HttpStatus.ACCEPTED.value());
+			
+			return new ResponseEntity<ResponseStructure<String>>(resp,HttpStatus.ACCEPTED);	
+		}
+		
+		return null;
+	}
+	
+	public ResponseEntity<ResponseStructure<Activity>> UpdateData(Activity data)
+	{
+		Optional<Activity> opt=dao.findById(data.getId());
+		
+		if(opt.isPresent())
+		{
+			Activity update= dao.saveData(data);
+			
+			ResponseStructure<Activity> resp=response.ResponseStructure(update, "Updated", HttpStatus.ACCEPTED.value());
+			
+			return new ResponseEntity<ResponseStructure<Activity>>(resp,HttpStatus.ACCEPTED);
+		}
+		return null;
 	}
 }
