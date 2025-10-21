@@ -3,11 +3,11 @@ package com.Zf.Dams.Zf.Dams.Dao.SuperDao;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
-public class SuperDao<R extends CrudRepository<T, ID>, T, ID>
+public class SuperDao<R extends JpaRepository<T, ID>, T, ID>
 {
 	@Autowired
 	private R repos;

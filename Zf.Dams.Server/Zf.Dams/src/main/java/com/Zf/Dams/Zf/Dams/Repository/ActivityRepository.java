@@ -1,12 +1,10 @@
 package com.Zf.Dams.Zf.Dams.Repository;
 
-import java.util.List;
-
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.Zf.Dams.Zf.Dams.Entities.Activity;
 
-public interface ActivityRepository extends CrudRepository<Activity, Integer>
+public interface ActivityRepository extends JpaRepository<Activity, Integer>
 {
 	
 }
