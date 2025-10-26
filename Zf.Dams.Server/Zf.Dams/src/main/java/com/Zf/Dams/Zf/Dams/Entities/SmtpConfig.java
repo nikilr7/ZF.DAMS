@@ -1,13 +1,19 @@
 package com.Zf.Dams.Zf.Dams.Entities;
 
 import jakarta.persistence.Entity;
+import java.lang.*;
+
+import com.Zf.Dams.Zf.Dams.Entities.superEntity.SuperEntity;
 
 @Entity
-public class SmtpConfig
+public class SmtpConfig extends SuperEntity
 {
 private String server;
 private Integer port;
-private Boolean useSSL;
+private boolean useSSL;
+private String password;
+private String fromEmail;
+private String fromName;
 public String getServer() {
 	return server;
 }
@@ -44,9 +50,7 @@ public String getFromName() {
 public void setFromName(String fromName) {
 	this.fromName = fromName;
 }
-private String password;
-private String fromEmail;
-private String fromName;
+
 
 
 }

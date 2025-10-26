@@ -19,10 +19,10 @@ public class Activity extends SuperEntity
 	private Float minimum;
 	private Float maximum;
 	private String units;
-	private Boolean active;
+	private boolean active;
 	private LocalDateTime createdTimeStamp;
 	private LocalDateTime removedTimeStamp;
-	private Boolean isImageCompressed;
+	private boolean isImageCompressed;
 
 	public Machine getMachine() {
 		return machine;
@@ -84,10 +84,10 @@ public class Activity extends SuperEntity
 	public void setUnits(String units) {
 		this.units = units;
 	}
-	public Boolean getActive() {
+	public boolean getActive() {
 		return active;
 	}
-	public void setActive(Boolean active) {
+	public void setActive(boolean active) {
 		this.active = active;
 	}
 	public LocalDateTime getCreatedTimeStamp() {
@@ -102,10 +102,10 @@ public class Activity extends SuperEntity
 	public void setRemovedTimeStamp(LocalDateTime removedTimeStamp) {
 		this.removedTimeStamp = removedTimeStamp;
 	}
-	public Boolean getIsImageCompressed() {
+	public boolean getIsImageCompressed() {
 		return isImageCompressed;
 	}
-	public void setIsImageCompressed(Boolean isImageCompressed) {
+	public void setIsImageCompressed(boolean isImageCompressed) {
 		this.isImageCompressed = isImageCompressed;
 	}
 	

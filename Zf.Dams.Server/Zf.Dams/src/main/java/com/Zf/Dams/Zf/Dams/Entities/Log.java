@@ -13,7 +13,7 @@ private LocalDateTime timestamp;
 private Machine machine;
 private Activity activity;
 private Employee employee;
-private Boolean status;
+private boolean status;
 private Float value;
 private String image;
 private String reason;
@@ -43,10 +43,10 @@ public Employee getEmployee() {
 public void setEmployee(Employee employee) {
 	this.employee = employee;
 }
-public Boolean getStatus() {
+public boolean getStatus() {
 	return status;
 }
-public void setStatus(Boolean status) {
+public void setStatus(boolean status) {
 	this.status = status;
 }
 public Float getValue() {

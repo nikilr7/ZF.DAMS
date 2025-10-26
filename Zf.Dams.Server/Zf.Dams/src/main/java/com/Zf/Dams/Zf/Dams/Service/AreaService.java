@@ -11,6 +11,7 @@ import com.Zf.Dams.Zf.Dams.Dao.AreaDao;
 import com.Zf.Dams.Zf.Dams.Entities.Area;
 import com.Zf.Dams.Zf.Dams.Helpers.Response;
 import com.Zf.Dams.Zf.Dams.Helpers.ResponseStructure;
+import com.Zf.Dams.Zf.Dams.Helpers.Exceptions.Id_Not_Found;
 
 
 @Service
@@ -50,7 +51,7 @@ public class AreaService
 			return new ResponseEntity<ResponseStructure<Area>>(resp,HttpStatus.FOUND);
 		}
 		
-		return null;
+		throw new Id_Not_Found();
 	}
 	
 	public ResponseEntity<ResponseStructure<String>> deleteData(Integer id)
@@ -66,7 +67,7 @@ public class AreaService
 			return new ResponseEntity<ResponseStructure<String>>(resp,HttpStatus.ACCEPTED);	
 		}
 		
-		return null;
+		throw new Id_Not_Found();
 	}
 	
 	public ResponseEntity<ResponseStructure<Area>> UpdateData(Area data)
